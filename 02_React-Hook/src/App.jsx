@@ -1,10 +1,15 @@
 import UseEffectComponent from "./UseEffect";
-import UseRefComponent from "./UseRef";
+import Users from "./components/User";
+import { MyProvider } from "./context";
+
 const App = () => {
 	return (
 		<>
 			{/* <UseEffectComponent /> */}
-			<UseRefComponent />
+			{/* <UseRefComponent /> */}
+			<MyProvider>
+				<Users />
+			</MyProvider>
 		</>
 	);
 };

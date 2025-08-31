@@ -1,0 +1,49 @@
+/*=======================================
+            TRANSITIONS BASIC 
+========================================*/
+.square {
+	background-color: red;
+	height: 100px;
+	opacity: 1;
+	transition: all 1s ease;
+}
+.square.square-entering {
+	opacity: 1;
+	transform: translateX(0%);
+}
+.square.square-entered {
+	background-color: blue;
+}
+.square.square-exiting {
+	background-color: green;
+}
+.square.square-exited {
+	opacity: 1;
+	transform: translateX(-100%);
+}
+/*=======================================
+                CSSTRANSITIONS
+========================================*/
+.cssSq {
+	background: red;
+	height: 100px;
+	transition: all 500ms ease-in;
+}
+.cssSq-enter.cssSq-enter-active,
+.cssSq-enter-done {
+	background-color: blue;
+}
+.cssSq-exit.cssSq-exit-active,
+.cssSq-exit-done {
+	background-color: green;
+}
+/*=======================================
+                TRANSITIONS GROUP 
+========================================*/
+
+.tgroup .item {
+	background: #6f42c1;
+	padding: 10px;
+	color: white;
+	margin-bottom: 5px;
+}

@@ -1,11 +1,18 @@
+import { useSelector } from "react-redux";
 
-function App() {
-  
-  return (
-    <>
-      App
-    </>
-  )
-}
+const App = () => {
+	const movies = useSelector((state) => state.movies.list);
 
-export default App
+	return (
+		<>
+			<h2>Movies</h2>
+			<ul>
+				{movies
+					? movies.map((movie) => <li key={movie.id}>{movie.title}</li>)
+					: null}
+			</ul>
+		</>
+	);
+};
+
+export default App;

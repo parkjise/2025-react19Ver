@@ -8,7 +8,13 @@ export const moviesSlice = createSlice({
 			{ id: 2, title: "Gozila" },
 		],
 	},
-	reducer: {},
+	reducers: {
+		addMovie:(state,action) => {
+			// const newMovie = {id:3,title:'Batman'}
+			state.list = [...state.list,newMovie,action.payload]
+		}
+	},
 });
 
+export const {addMovie} = moviesSlice.actions;
 export default moviesSlice.reducer;

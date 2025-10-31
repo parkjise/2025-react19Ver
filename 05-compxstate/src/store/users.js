@@ -3,10 +3,17 @@ import axios from 'axios'
 
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
-  async(thunkAPI) => {
-    const res = (await axios.get('https://jsonplaceholder.typicode.com/users')).
-    then(response => response.data)
-    return res
+  async(obj,{rejectWithValue,fullfillWithValue}) => {
+    thunkAPI.dispatch(testAsyncDispatch())
+      console.log(thunkAPI)
+    try{
+      const res = await axios.get(`https://jsonplaceholder.typicode.com/users`)
+      return fullfillWithValue('Something else');
+    }
+    catch(err){
+      return rejectWithValue('Oops, try again later');
+    }
+
   }
 )
 
@@ -15,27 +22,31 @@ export const usersSlice = createSlice({
   initialState:{
     type:'Guest',
     users:[],
+    loading:false
   },
   reducers:{
     setType:(state,action) => {
       state.type = action.payload || 'Guest'
     },
+    testAsyncDispatch:(state) => {
+      state.test = true
+    }
   },
   extraReducers:(builder) => {
     builder
     .addCase(fetchUsers.pending,(state) => {
-      console.log('Pending')
+      state.loading = true;
     })
     .addCase(fetchUsers.fulfilled,(state,action) => {
-      console.log('fulfiled')
+      state.loading = false;
       state.users = action.payload
     })
-    .addCase(fetchUsers.rejected,(state) => {
-      console.log('Rejected')
+    .addCase(fetchUsers.rejected,(state,action) => {
+      console.log(action.payload);
+      state.loading = false;
     })
-   
   }
 })
 
-export const {setType} = usersSlice.actions
+export const {setType,testAsyncDispatch} = usersSlice.actions
 export default usersSlice.reducer

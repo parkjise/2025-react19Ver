@@ -11,7 +11,7 @@ export const moviesSlice = createSlice({
 	reducers: {
 		addMovie:(state,action) => {
 			// const newMovie = {id:3,title:'Batman'}
-			state.list = [...state.list,newMovie,action.payload]
+			state.list = [...state.list,action.payload]
 		}
 	},
 });

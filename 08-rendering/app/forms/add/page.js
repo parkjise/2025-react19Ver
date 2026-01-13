@@ -1,19 +1,14 @@
-import axios from "axios";
-
+"use client";
+import { addEmployee } from "@/app/helpers/actions";
+import { useActionState } from "react";
 export default function addPage() {
-  async function onSubmit(formdata) {
-    "use server";
-    await axios.post("http://localhost:3004/employees", {
-      fullname: formdata.get("fullname"),
-      position: formdata.get("position"),
-      age: formdata.get("age"),
-    });
-  }
+  const [state, action, isPending] = useActionState(addEmployee, null);
+  console.log(state);
   return (
     <>
       <h1>Add Page</h1>
       <div>
-        <form action={onSubmit}>
+        <form action={action}>
           <input
             type="text"
             className="form-control mb-3"
@@ -39,6 +34,12 @@ export default function addPage() {
             Add Employee
           </button>
         </form>
+        {isPending && <div>...Loading</div>}
+        {!state?.success ? (
+          <div className="text-danger">{state?.message}</div>
+        ) : (
+          <div className="text-success">{state?.message}</div>
+        )}
       </div>
     </>
   );

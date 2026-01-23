@@ -1,6 +1,39 @@
 "use server";
 
 import axios from "axios";
+import { redirect } from "next/navigation";
+
+type Props = {
+  formdata: { id: string; fullname: string; position: string; age: number };
+};
+
+export async function editEmployess({ formdata }: Props) {
+  try {
+    const { fullname, position, age } = formdata;
+    if (age < 18) {
+      return { error: "You need to be at least18" };
+    }
+
+    const res = await fetch(`http://localhost:3004/employees/${formdata.id}`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullname,
+        position,
+        age,
+      }),
+    });
+    if (!res.ok) {
+      return { error: `${res.status} ${res.statusText}` };
+    }
+  } catch (error) {
+    return { error: error };
+  }
+  redirect("/");
+}
 
 export async function counterTrigger() {
   console.log("counter trigger");

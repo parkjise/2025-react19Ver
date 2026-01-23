@@ -4,6 +4,7 @@ import "./App.css";
 import Toggle from "./components/Toggle";
 // import Loading from "./components/Loading";
 import MultiFilterPanel from "./pages/MultiFilterPanel";
+import City from "./pages/City";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -27,6 +28,7 @@ function App() {
       <hr />
       <hr />
       <MultiFilterPanel />
+      <City />
     </>
   );
 }

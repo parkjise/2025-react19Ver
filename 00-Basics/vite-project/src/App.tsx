@@ -5,6 +5,13 @@ import Toggle from "./components/Toggle";
 // import Loading from "./components/Loading";
 import MultiFilterPanel from "./pages/MultiFilterPanel";
 import City from "./pages/City";
+import Array from "./pages/Array";
+import Array02 from "./pages/Array02";
+import Coupon from "./pages/Coupon";
+import Test from "./pages/Test/Test";
+import Controlled from "./pages/Controlled";
+import FormState from "./pages/FormState";
+import SelectCheckbox from "./pages/SelectCheckbox";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -29,6 +36,13 @@ function App() {
       <hr />
       <MultiFilterPanel />
       <City />
+      <Array />
+      <Array02 />
+      <Coupon />
+      <Test />
+      <Controlled />
+      <FormState />
+      <SelectCheckbox />
     </>
   );
 }

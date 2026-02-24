@@ -12,6 +12,7 @@ import Test from "./pages/Test/Test";
 import Controlled from "./pages/Controlled";
 import FormState from "./pages/FormState";
 import SelectCheckbox from "./pages/SelectCheckbox";
+import MemberForm from "./pages/MemberForm";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -43,6 +44,7 @@ function App() {
       <Controlled />
       <FormState />
       <SelectCheckbox />
+      <MemberForm />
     </>
   );
 }

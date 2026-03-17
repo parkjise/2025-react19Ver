@@ -32,6 +32,7 @@ import Effect01 from "./pages/Effect/Effect01";
 import Js12 from "./pages/js/Js12";
 // import SearchFilter from "./pages/Exam/Search-filter/SearchFilter";
 import SearchFilter from "./pages/Exam/Search-filter/SearchFilter02";
+import Modal from "./pages/Test/Modal";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -76,7 +77,8 @@ function App() {
       {/* <Effect01 /> */}
       {/* <Js12 /> */}
       {/* <SearchFilter /> */}
-      <SearchFilter />
+      {/* <SearchFilter /> */}
+      <Modal />
     </>
   );
 }

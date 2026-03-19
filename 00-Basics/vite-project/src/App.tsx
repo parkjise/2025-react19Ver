@@ -33,6 +33,9 @@ import Js12 from "./pages/js/Js12";
 // import SearchFilter from "./pages/Exam/Search-filter/SearchFilter";
 import SearchFilter from "./pages/Exam/Search-filter/SearchFilter02";
 import Modal from "./pages/Test/Modal";
+import Checkbox from "./pages/Exam/All-checkbox/Checkbox";
+import { Loading } from "./pages/Test/Loading";
+import Api from "./pages/Test/Api";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -78,7 +81,10 @@ function App() {
       {/* <Js12 /> */}
       {/* <SearchFilter /> */}
       {/* <SearchFilter /> */}
-      <Modal />
+      {/* <Modal /> */}
+      {/* <Checkbox /> */}
+      {/* <Loading /> */}
+      <Api />
     </>
   );
 }

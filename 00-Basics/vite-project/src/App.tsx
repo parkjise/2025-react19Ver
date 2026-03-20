@@ -36,6 +36,7 @@ import Modal from "./pages/Test/Modal";
 import Checkbox from "./pages/Exam/All-checkbox/Checkbox";
 import { Loading } from "./pages/Test/Loading";
 import Api from "./pages/Test/Api";
+import Sort from "./pages/Test/Sort";
 
 function App() {
   const [count, setCount] = useState<number>(0);
@@ -84,7 +85,8 @@ function App() {
       {/* <Modal /> */}
       {/* <Checkbox /> */}
       {/* <Loading /> */}
-      <Api />
+      {/* <Api /> */}
+      <Sort />
     </>
   );
 }

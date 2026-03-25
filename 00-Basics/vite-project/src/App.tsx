@@ -37,7 +37,8 @@ import Checkbox from "./pages/Exam/All-checkbox/Checkbox";
 import { Loading } from "./pages/Test/Loading";
 import Api from "./pages/Test/Api";
 import Sort from "./pages/Test/Sort";
-
+import CheckAll from "./pages/Test/CheckAll";
+import Toggle02 from "./pages/Test/Toggle";
 function App() {
   const [count, setCount] = useState<number>(0);
   const [toggle, setToggle] = useState<boolean>(false);
@@ -86,7 +87,9 @@ function App() {
       {/* <Checkbox /> */}
       {/* <Loading /> */}
       {/* <Api /> */}
-      <Sort />
+      {/* <Sort /> */}
+      {/* <CheckAll /> */}
+      <Toggle02 />
     </>
   );
 }
